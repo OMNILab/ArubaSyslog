@@ -2,14 +2,13 @@
 
 set -e
 
-# Parameters
-dirname=/home/data/WiFi.Syslog
-port=514
-filter="all"
-filesize=1000000000
-OPTS="-z -P $port -d $dirname -s $filesize -F $filter"
+timeNow=`date +%F`
+infilename="/home/data/WiFi.Syslog/wifilog$timeNow"
+outfilename="/home/nfs/dataset/WiFi.Syslog/wifilog$timeNow"
 
-mkdir -p $dirname
+mkdir -p outfilename
+
+OPTS="-I $infilename -O $outfilename"
 
 # Obtain runnable package file
 bin=`dirname "$0"`
@@ -22,5 +21,4 @@ if [[ -z "$RUNJAR" ]] || [[ "$RUNJAR" == " " ]]; then
     exit -1;
 fi
 
-# Run main logic
-java -cp $RUNJAR cn.edu.sjtu.omnilab.syslogdumper.StartLogging $OPTS
+java -cp $RUNJAR cn.edu.sjtu.omnilab.sysloganonymizer.StartProcessing $OPTS
