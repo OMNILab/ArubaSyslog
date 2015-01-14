@@ -16,7 +16,7 @@ bin=`dirname "$0"`
 bin=`cd "$bin">/dev/null; pwd`
 LHOME="${bin}/.."
 
-RUNJAR=`find target -name *-with-dependencies.jar`
+RUNJAR=`find $LHOME/target -name *-with-dependencies.jar`
 if [[ -z "$RUNJAR" ]] || [[ "$RUNJAR" == " " ]]; then
     echo "Cannot find runable jar binary. Please run 'mvn package' first."
     exit -1;
