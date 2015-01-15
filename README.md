@@ -45,12 +45,6 @@ Several workflows can be followed for different purposes:
 Small Tools
 -----------
 
-* `syslogreplayer`:
-
-This is a simple tool to send UDP based log packets over network. It works
-for diagnoses of network condition or development test of logger software in
-lab environment.
-
 * `mark_session_ip.py`:
 
 This script works on the wifi sessions to mark each session with an allocated
