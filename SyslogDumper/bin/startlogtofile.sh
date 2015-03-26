@@ -1,16 +1,15 @@
 #!/bin/bash
 
-# set -e
-
 # Parameters
-OUTFOLDERr=/home/hadoop/wifi.syslog.original
+OUTFOLDER=/home/hadoop/wifi.syslog.original/
 PORT=514
 FILTER="all"
 FILESIZE=1000000000
 OPTS="-z -P $PORT -d $OUTFOLDER -s $FILESIZE -F $FILTER"
 
 # kill older running processes
-PID=$(ps -ef | grep $(basename $OUTFOLDER) | awk '$8 == "/usr/bin/java" {print$2}')
+PID=$(ps -ef | grep $(basename $OUTFOLDER) | awk '$8 == "/usr/bin/java" || "java" {print$2}')
+echo $PID
 kill $PID
 
 mkdir -p $OUTFOLDER
