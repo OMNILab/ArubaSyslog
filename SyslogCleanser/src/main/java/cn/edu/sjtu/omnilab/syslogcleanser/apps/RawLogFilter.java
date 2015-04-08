@@ -46,8 +46,8 @@ public class RawLogFilter {
     public static void main(String[] args) throws IOException, ParseException {
         
         //Initial options
-        String input_location = "";
-        String output_location = "";
+        String input_location = null;
+        String output_location = null;
 
         // fetch command line options 
         int optSetting = 0;

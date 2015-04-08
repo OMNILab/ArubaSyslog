@@ -42,9 +42,9 @@ There are four APPs shipped with this package:
 Calling commands:
 
         $ java -cp target/SyslogCleanser-<version>-with-dependencies.jar \
-        $ cn.edu.sjtu.omnilab.syslogcleanser.apps.<APPNAMES> \
-        $ -i [source] \
-        $ -o [destination]
+                cn.edu.sjtu.omnilab.syslogcleanser.apps.<APPNAMES> \
+                -i [source] \
+                -o [destination]
 
 
 NOTICE
